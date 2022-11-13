@@ -19,17 +19,6 @@ response = requests.post('https://api.estuary.tech/collections/', headers=header
 print("done")
 
 
-# Commit it
-
-headers2 = {
-    'Authorization': 'Bearer EST02fee50c-68e8-46b2-8839-ccdc677bda04ARY',
-    'Accept': 'application/json',
-}
-
-response = requests.post('https://api.estuary.tech/collections/f21c4f1b-1790-4c57-9820-17bd1c75bc3b/commit', headers=headers2)
-print("done")
-
-
 # Add to it
 
 
@@ -41,7 +30,17 @@ headers = {
 }
 
 files = {
-    'data': open('filename1.avi', 'rb'),
+    'data': open('filename5.avi', 'rb'),
 }
 
-response = requests.post('https://upload.estuary.tech/content/add?coluuid=f21c4f1b-1790-4c57-9820-17bd1c75bc3b&dir=/Test1/', headers=headers, files=files)
+response = requests.post('https://upload.estuary.tech/content/add?coluuid=f21c4f1b-1790-4c57-9820-17bd1c75bc3b&dir=/I_think/', headers=headers, files=files)
+
+# Commit it
+
+headers2 = {
+    'Authorization': 'Bearer EST02fee50c-68e8-46b2-8839-ccdc677bda04ARY',
+    'Accept': 'application/json',
+}
+
+response = requests.post('https://api.estuary.tech/collections/f21c4f1b-1790-4c57-9820-17bd1c75bc3b/commit', headers=headers2)
+print("done")

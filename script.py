@@ -20,7 +20,7 @@ size = (frame_width, frame_height)
 # Below VideoWriter object will create a frame of above defined The output is stored in 'filename.avi' file.
 result = []
 rNum = 0
-result.append(cv2.VideoWriter(f'filename{rNum}.avi', cv2.VideoWriter_fourcc(*'MJPG'), 10, size))
+result.append(cv2.VideoWriter(f'filename{rNum}.mp4', cv2.VideoWriter_fourcc(*'MJPG'), 10, size))
 
 	
 #Motion
@@ -41,6 +41,7 @@ while(True):
         #print("Started recording!")
         t_end = time.time() + 10
         while time.time() < t_end:
+            ret, frame = video.read()
             result[rNum].write(frame)
             # Display the frame saved in the file
             cv2.imshow('Frame', frame)
