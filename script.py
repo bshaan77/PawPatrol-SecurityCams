@@ -41,10 +41,10 @@ while(True):
         #print("Started recording!")
         t_end = time.time() + 10
         while time.time() < t_end:
-            ret, frame = video.read()
             result[rNum].write(frame)
             # Display the frame saved in the file
             cv2.imshow('Frame', frame)
+        cv2.imshow('Frame', frame)
         frame_rec_count = 0
         #release the videos
         #video.release()
